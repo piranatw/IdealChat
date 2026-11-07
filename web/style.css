@@ -156,3 +156,19 @@ ul { list-style: none; margin: 0; padding: 0; }
   #app { flex-direction: column; }
   aside { width: 100%; max-height: 45%; border-right: 0; border-bottom: 1px solid var(--line); }
 }
+
+/* bonus: reactions, edit/delete, typing indicator */
+.msg { position: relative; }
+.msg.deleted .text { font-style: italic; color: var(--muted); }
+.msg .reactions { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.msg .reactions:empty { display: none; }
+.chip { padding: 1px 8px; border: 1px solid var(--muted); border-radius: 999px; background: transparent; font-size: 12px; cursor: pointer; }
+.chip.mine { font-weight: 600; border-color: currentColor; }
+.msg .actions { display: flex; gap: 2px; margin-top: 4px; }
+.msg .actions button { display: inline-flex; padding: 3px; border: 0; border-radius: 6px; background: transparent; color: var(--muted); cursor: pointer; }
+.msg .actions button:hover { background: rgba(0, 0, 0, .08); color: inherit; }
+.msg .picker { display: flex; flex-wrap: wrap; gap: 2px; margin-top: 4px; }
+.msg .picker[hidden] { display: none; }
+.msg .picker button { border: 0; border-radius: 6px; background: rgba(0, 0, 0, .06); font-size: 15px; padding: 2px 5px; cursor: pointer; }
+.msg .edit { width: 100%; }
+.typing { min-height: 18px; padding: 0 16px; font-size: 12px; color: var(--muted); }
