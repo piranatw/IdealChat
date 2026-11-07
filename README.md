@@ -2,6 +2,8 @@
 
 Files: `server.py` (server), `protocol.py` (hand-written HTTP + WebSocket on raw sockets), `web/` (the client: `index.html`, `app.js`, `style.css`). Python 3.8+ stdlib only, nothing to install. The client runs in any modern browser.
 
+**Live deployment (Render): https://idealchat.onrender.com/** - open it on two different computers to chat. It is on the free tier, so it sleeps after 15 minutes without traffic; the first load can take 30-60 s.
+
 ## Run
 ```
 python server.py --port 5000          # on the server machine (LAN PC or cloud VM)
@@ -37,6 +39,8 @@ python server.py --port 5000
 Without a key the server still runs, but the bot answers "not configured". On the cloud the key is set as an environment variable in the hosting dashboard (see below).
 
 ### Deploy on Render (free, no credit card)
+Our deployed website: **https://idealchat.onrender.com/**
+
 Render runs `server.py` from this GitHub repo and gives it an HTTPS URL. The browser client switches to `wss://` by itself on HTTPS, so no code change is needed.
 
 1. Push the repo to GitHub (never commit the API key; `.gitignore` already excludes caches and `.env`).
